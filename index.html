@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dog Health & Habits Diary</title>
+  <meta name="description" content="Simple, privacy-friendly diary to track a dog's health and daily habits." />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/icons/paw.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>🐾 Dog Health & Habits Diary <span class="tag">static • GitHub Pages</span></h1>
+      <div class="controls">
+        <input id="filterDate" type="month" aria-label="Filter by month" />
+        <select id="sortSelect" aria-label="Sort order">
+          <option value="desc">Newest first</option>
+          <option value="asc">Oldest first</option>
+        </select>
+        <button id="downloadJson" class="btn" type="button">Download JSON</button>
+        <label class="btn file-btn">
+          <input id="uploadJson" type="file" accept="application/json" hidden />
+          Upload JSON (preview)
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="grid">
+      <section class="card">
+        <h2>Entries</h2>
+        <div class="content" id="entries" role="feed" aria-live="polite"></div>
+      </section>
+
+      <aside class="card">
+        <h2>Trends</h2>
+        <div class="content">
+          <canvas id="weightChart" aria-label="Weight trend" role="img"></canvas>
+          <p class="muted space-top">
+            Static site: update <code>data/*.json</code> and <code>data/manifest.json</code>, then push to update.
+          </p>
+        </div>
+      </aside>
+    </div>
+
+    <section class="card space-top">
+      <h2>Schema</h2>
+      <div class="content">
+        <p class="muted">Reference schema (see <code>data/schema.json</code>):</p>
+        <pre class="muted small" id="schema"></pre>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="assets/js/app.js" type="module"></script>
+</body>
+</html>
