@@ -1,0 +1,18 @@
+{
+  "entries": [
+    {
+      "date": "YYYY-MM-DD",
+      "weight": 0,
+      "weightUnit": "lb",
+      "energy": "low | normal | high",
+      "meals": 0,
+      "waterCups": 0,
+      "medsGiven": false,
+      "medsNotes": "",
+      "walks": 0,
+      "poopQuality": "none | soft | normal | hard",
+      "notes": "",
+      "photoUrl": ""
+    }
+  ]
+}
