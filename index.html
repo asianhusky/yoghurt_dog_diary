@@ -12,19 +12,7 @@
 <body>
   <header class="site-header">
     <div class="wrap">
-      <h1>🐾 Dog Health & Habits Diary <span class="tag">static • GitHub Pages</span></h1>
-      <div class="controls">
-        <input id="filterDate" type="month" aria-label="Filter by month" />
-        <select id="sortSelect" aria-label="Sort order">
-          <option value="desc">Newest first</option>
-          <option value="asc">Oldest first</option>
-        </select>
-        <button id="downloadJson" class="btn" type="button">Download JSON</button>
-        <label class="btn file-btn">
-          <input id="uploadJson" type="file" accept="application/json" hidden />
-          Upload JSON (preview)
-        </label>
-      </div>
+      <h1>🐾 Dog Health & Habits Diary <span class="tag">Hosted by Frank (on GitHub!)</span></h1>
     </div>
   </header>
 
@@ -35,14 +23,6 @@
         <div class="content" id="entries" role="feed" aria-live="polite"></div>
       </section>
     </div>
-
-    <section class="card space-top">
-      <h2>Schema</h2>
-      <div class="content">
-        <p class="muted">Reference schema (see <code>data/schema.json</code>):</p>
-        <pre class="muted small" id="schema"></pre>
-      </div>
-    </section>
   </main>
   <script src="assets/js/app.js" type="module"></script>
 </body>
