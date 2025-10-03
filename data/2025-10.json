@@ -1,0 +1,17 @@
+{
+  "entries": [
+    {
+      "date": "2025-10-01",
+      "weight": 54.2,
+      "weightUnit": "lb",
+      "energy": "low",
+      "meals": 2,
+      "waterCups": 5,
+      "medsGiven": false,
+      "walks": 1,
+      "poopQuality": "soft",
+      "notes": "Rained. Slept a lot.",
+      "photoUrl": ""
+    }
+  ]
+}
