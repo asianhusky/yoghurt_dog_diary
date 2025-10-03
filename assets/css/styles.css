@@ -48,6 +48,13 @@ button{cursor:pointer}
   font-size:18px;color:var(--ink-contrast)
 }
 .card .content{padding:16px}
+/* Center the Entries card and keep it readable on big screens */
+#entriesCard{
+  max-width: 760px;         /* tweak: 680–820px if you like */
+  margin-inline: auto;      /* centers horizontally */
+}
+
+
 .entry{padding:14px;border-bottom:1px dashed var(--border)}
 .entry:last-child{border-bottom:0}
 .entry .row{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:14px;margin-top:6px}
