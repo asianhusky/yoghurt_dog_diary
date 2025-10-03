@@ -1,4 +1,18 @@
-:root{--bg:#0b0f14;--card:#121821;--ink:#eaf2ff;--muted:#a9b3c7;--accent:#5aa0ff;--good:#3ddc97;--warn:#ffd56b;--bad:#ff6b6b}
+:root{
+  /* Sakura Spring palette */
+  --bg-start: #fff4f7;   /* very light cherry blossom */
+  --bg-end:   #ffe9f0;   /* warm blush */
+  --card:     #fffafa;   /* soft rose-tinted white */
+  --ink:      #5a2a41;   /* plum text */
+  --muted:    #9c6b7a;   /* dusty mauve (muted text) */
+  --accent:   #e85a8b;   /* sakura pink */
+  --accent-2: #ff8ab3;   /* lighter pink for hovers */
+  --good:     #58b368;   /* fresh leaf green */
+  --warn:     #ffb84d;   /* apricot */
+  --bad:      #e05a5a;   /* camellia red */
+  --border:   #f3c8d7;   /* petal border */
+  --ink-contrast: #3b1b2b; /* deeper plum when needed */
+}
 
 *{box-sizing:border-box}
 body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;background:linear-gradient(180deg,#0b0f14,#0e141c);color:var(--ink)}
