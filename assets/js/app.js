@@ -1,31 +1,16 @@
 const $ = (sel) => document.querySelector(sel);
 const entriesEl = $('#entries');
-const sortSel = $('#sortSelect');
-const monthInput = $('#filterDate');
-const dlBtn = $('#downloadJson');
-const upInput = $('#uploadJson');
-const schemaEl = $('#schema');
 
 let DATA = { entries: [] };
 
 init();
 
 async function init(){
-  try {
-    const schema = await (await fetch('data/schema.json')).json();
-    schemaEl.textContent = JSON.stringify(schema, null, 2);
-  } catch {}
-
+  // Load all month files from the manifest
   const files = await loadManifest();
   const monthly = await Promise.all(files.map(loadJson));
   DATA.entries = monthly.flatMap(m => m.entries || []);
   render();
-  
-
-  monthInput.addEventListener('input', render);
-  sortSel.addEventListener('change', render);
-  dlBtn.addEventListener('click', downloadMergedJson);
-  upInput.addEventListener('change', handleUploadPreview);
 }
 
 async function loadManifest(){
@@ -43,17 +28,18 @@ async function loadJson(path){
 }
 
 function currentEntries(){
-  const month = monthInput.value;
-  const dir = sortSel.value;
+  // No month filter or manual sort controls anymore — just newest first
   let items = (DATA.entries || []).slice().filter(x => x && x.date);
-  if (month) items = items.filter(x => x.date.startsWith(month));
-  items.sort((a,b) => dir === 'asc' ? a.date.localeCompare(b.date) : b.date.localeCompare(a.date));
+  items.sort((a,b) => b.date.localeCompare(a.date)); // DESC by date
   return items;
 }
 
 function render(){
   const items = currentEntries();
-  if (items.length === 0) { entriesEl.innerHTML = '<div class="empty">No entries for this view.</div>'; return; }
+  if (items.length === 0) {
+    entriesEl.innerHTML = '<div class="empty">No entries.</div>';
+    return;
+  }
   entriesEl.innerHTML = items.map(htmlEntry).join('');
 }
 
