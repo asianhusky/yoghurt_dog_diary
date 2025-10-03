@@ -20,7 +20,7 @@ async function init(){
   const monthly = await Promise.all(files.map(loadJson));
   DATA.entries = monthly.flatMap(m => m.entries || []);
   render();
-  drawChart();
+  
 
   monthInput.addEventListener('input', render);
   sortSel.addEventListener('change', render);
@@ -80,18 +80,6 @@ function num(v){ return typeof v === 'number' && Number.isFinite(v); }
 function fmtDate(s){ const [y,m,d]=s.split('-').map(Number); return new Date(y,m-1,d).toLocaleDateString(); }
 function escapeHtml(str=''){ return String(str).replace(/[&<>\"']/g, s=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[s])); }
 
-function drawChart(){
-  const ctx = document.getElementById('weightChart');
-  const points = (DATA.entries||[]).filter(e=>num(e.weight) && e.date).sort((a,b)=>a.date.localeCompare(b.date));
-  const labels = points.map(p=>p.date);
-  const data = points.map(p=>p.weight);
-  if(chart) chart.destroy();
-  chart = new Chart(ctx, {
-    type: 'line',
-    data: { labels, datasets: [{ label: 'Weight', data, tension: .3 }] },
-    options: { plugins:{legend:{display:true}}, scales:{x:{ticks:{autoSkip:true}}, y:{beginAtZero:false}} }
-  });
-}
 
 function downloadMergedJson(){
   const blob = new Blob([JSON.stringify({entries: currentEntries()}, null, 2)], {type:'application/json'});
