@@ -1,0 +1,31 @@
+{
+  "entries": [
+    {
+      "date": "2025-09-25",
+      "weight": 54.5,
+      "weightUnit": "lb",
+      "energy": "high",
+      "meals": 2,
+      "waterCups": 7,
+      "medsGiven": false,
+      "walks": 3,
+      "poopQuality": "normal",
+      "notes": "Beach run, lots of zoomies.",
+      "photoUrl": ""
+    },
+    {
+      "date": "2025-09-26",
+      "weight": 54.3,
+      "weightUnit": "lb",
+      "energy": "normal",
+      "meals": 2,
+      "waterCups": 6,
+      "medsGiven": true,
+      "medsNotes": "Heartworm pill",
+      "walks": 2,
+      "poopQuality": "normal",
+      "notes": "Vet day, all good.",
+      "photoUrl": ""
+    }
+  ]
+}
