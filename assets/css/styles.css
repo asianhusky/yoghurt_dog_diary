@@ -32,14 +32,7 @@ body{
 .wrap{max-width:980px;margin:0 auto;padding:16px}
 h1{display:flex;gap:10px;align-items:center;margin:8px 0 2px;font-size:26px;color:var(--ink-contrast)}
 h1 .tag{font-size:12px;color:var(--muted);font-weight:500}
-.controls{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0 6px}
-input,select,button,textarea{
-  background:#fff7fa;
-  color:var(--ink);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:10px 12px
-}
+
 button{cursor:pointer}
 .grid{display:grid;grid-template-columns:1fr;gap:16px}
 @media(min-width:900px){.grid{grid-template-columns:2fr 1fr}}
