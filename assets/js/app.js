@@ -6,7 +6,7 @@ const dlBtn = $('#downloadJson');
 const upInput = $('#uploadJson');
 const schemaEl = $('#schema');
 
-let DATA = { entries: [] }
+let DATA = { entries: [] };
 
 init();
 
